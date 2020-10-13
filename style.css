@@ -1,0 +1,291 @@
+/* CSS Document */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+       display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+   quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/***********/
+input, button {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+/************
+Basic
+************/
+body{
+   background-color: #ffffff;
+   font-family: 'Helvetica Neue', Calibri, sans-serif;
+   color: #444444;
+}
+h1,h2,h3{
+   font-family: 'Bitter', serif;
+}
+h1{
+   font-size: 2.5rem;
+   font-weight: 700;
+   line-height: 1.5em;
+   text-align: center;
+   margin: 20px 0 30px 0;
+   color: #0079bf;
+}
+h2{
+   font-size: 0.95rem;
+   text-align: left;
+   font-weight: 700;
+   line-height: 1.3em;
+}
+h3{
+   font-size: 0.95rem;
+   text-align: left;
+   font-weight: 700;
+   line-height: 1.3rem;
+}
+p{
+   font-size: 1rem;
+   line-height: 1.1rem;
+}
+.wrapper {
+  width: 100%;
+  height: auto;
+}
+/************
+Header 
+************/
+header.page-header{
+   height: 80px;
+   padding: 20px 6% 0 6%;
+   background-color:#A4A4AB;
+   background-image: linear-gradient(180deg, #01314d, #0079bf);
+}
+/*Lagt till flex*/
+.flex-container{
+   display: flex;
+   flex-direction: row;
+}
+.empty-keeper{
+   flex: 33%;
+}
+.logo-keeper{
+   max-width: 100%;
+   padding-left: 150px;
+   margin:  0 auto;
+   flex: 33%;
+}
+h2.logotext {
+   display: inline-block;
+   width: 300px;
+   font-family:'Anton', sans-serif;
+   text-align: center;
+   font-weight: 400;
+   font-size: 2.5rem;
+   color: #ffffff;
+}
+.button-keeper{
+   flex: 33%;
+ }
+button#logout-button{
+   max-width: 150px;
+   float: right;
+   margin-top: 5px;
+   padding: 8px 10px;
+   border-radius: 20px;
+   color: #0079bf;
+   font-weight: bold;
+   width: 100%;
+   background-image: linear-gradient(#ffffff, #ffffff);
+   font-size: 1rem;
+   cursor: pointer;
+   outline: none;
+}
+button#logout-button:hover,
+button#logout-button:focus{
+   background-image: linear-gradient(180deg, #ffffff, #0079bf);
+   color: #01314d;
+}
+/************
+Main
+************/
+.main{
+   height: 750px;
+   padding: 0 6%;
+   background-color: #0079bf;
+   overflow: hidden;
+}
+.login-container{
+   height: auto;
+   width: 30%;
+   margin: 150px auto 0 auto;
+   padding: 20px 4% 55px 4%;
+   border-radius: 7px;
+   background-color:#ebecf0;
+}
+label{
+   display: inline-block;
+   color: #0079bf;
+   font-size: 1.2rem;
+   font-weight: 700;
+}
+input#username,
+input#password{
+   display: inline-block;
+   width: 97%;
+   padding: 8px 0 8px 2%;
+   background-color:#ebecf0;
+   border-bottom: 2px solid #0079bf;
+   margin: 10px 0;
+   outline: none;
+   font-size: 0.95rem;
+}
+button#login-button{
+   display: block;
+   margin-top: 10px;
+   padding: 10px;
+   border-radius: 20px;
+   color: #ffffff;
+   font-weight: bold;
+   width: 100%;
+   background-image: linear-gradient(0deg, #01314d, #0079bf);
+   font-size: 1rem;
+   cursor: pointer;
+   outline: none;
+}
+button#login-button:hover{
+   background-image: linear-gradient(#0079bf, #0079bf);
+}
+.column-container{
+   /*width: 78%;*/
+   float: left;
+   width: 1255px;
+   margin: 0;
+}
+.column{
+   float: left;
+   background-color:#ebecf0;
+   width: 272px;
+   margin: 10px 5px;
+   padding: 10px 20px 10px 10px;
+   min-height: 100px;
+   max-height: 700px;
+   border-radius: 7px;
+   text-align: center;
+   text-align: left;
+   overflow: auto;
+   border-bottom: 1px solid #444444;
+   border-right: 1px solid #444444;
+}
+.column-header{
+   width: 252px;
+   min-height: 20px;
+}
+
+/* ----------------------------------------------------------------------CARDS */
+
+
+.card{
+   position: relative;    /*LA TILL FÖR ATT KUNNA ANVÄNDA POSITION ABSOLUTE PÅ TA-BORT-KNAPP (FÖR ATT KUNNA LÄGGA DEN I HÖRNET LÄNGST UPP I HÖGRA HÖRNET PÅ KORTET*/
+   display: inline-block;
+   width: 252px;
+   min-height: 20px;
+   margin: 10px 0 0 0;
+   padding: 10px;
+   border-radius: 7px;
+   background-color: #ffffff;
+   border-bottom: 1px solid #A4A4AB;
+   border-right: 1px solid #A4A4AB;
+   cursor: pointer;
+}
+.enter-card{
+   width: 252px;
+   min-height: 20px;
+   margin: 10px 0;
+   cursor: pointer;
+}
+
+.add-card-button{
+   cursor: pointer;
+}
+
+.delete-card-btn{
+   position: absolute;
+   right: 10px;
+   top: 0;
+   cursor: pointer;
+   border-radius: 100%;
+   width: 5px;
+   height: 5px;
+   color:grey;
+   font-weight: 800;
+   outline: none;
+}
+.delete-card-btn:hover{
+   color: orangered;
+}
+.edit-card-button, .edit-done-button{
+   font-size: 12px;
+   font-weight: bold;
+   position: absolute;
+   right: 10px;
+   bottom: 5px;
+}
+
+/************
+Footer
+************/
+.footer{
+   clear: both;
+   height: 50px;
+   padding: 0 6%;
+   margin-bottom: 10px;
+   background-image: linear-gradient(0deg, #01314d, #0079bf);
+}
+
+
+
+
+
+
+
