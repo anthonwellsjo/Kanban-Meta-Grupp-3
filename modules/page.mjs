@@ -148,6 +148,7 @@ export const page = {
     deleteCard: function (e) {
         e.target.parentNode.remove();
         page.editing = false;
+        window.removeEventListener('click', page.clickOutsideCardSaveEvent);
     },
     editCard: function (e) {
         if (page.editing == false) {
@@ -162,23 +163,31 @@ export const page = {
             let saved = false;
             btn.addEventListener("click", function () {
                 saved = true;
-                parentText.contentEditable = false;
-                e.target.parentNode.removeChild(btn);
-                e.target.style.display = "block";
-                data.saveCardToLocalStorage(e.target.parentNode);
-                page.editing = false;
+                page.saveCard(e, btn);
             });
             page.editing = true;
-            window.addEventListener('click', function clickOutsideCardSaveEvent(ev){   
+            window.addEventListener('click',  ev => page.clickOutsideCardSaveEvent(ev));   /*
                 if (!e.target.parentNode.contains(ev.target) && saved != true && !e.target.parentNode.parentNode.getElementsByClassName("add-card-button")[0].contains(ev.target)){
-                    parentText.contentEditable = false;
-                    e.target.parentNode.removeChild(btn);
-                    e.target.style.display = "block";
-                    page.editing = false;
+                    page.saveCard(e, btn);
                     window.removeEventListener('click', clickOutsideCardSaveEvent);
                 }
-            });
+            });*/
         }
+    },
+    clickOutsideCardSaveEvent: function(ev){
+        console.log("utanför");/*
+        if (!e.target.parentNode.contains(ev.target) && saved != true && !e.target.parentNode.parentNode.getElementsByClassName("add-card-button")[0].contains(ev.target)){
+            page.saveCard(e, btn);
+        }*/
+    },
+    saveCard: function(e, btn){
+        e.target.parentNode.getElementsByClassName("card-description")[0].contentEditable = false;
+        e.target.parentNode.removeChild(btn);
+        e.target.style.display = "block";
+        page.editing = false;
+        data.saveCardToLocalStorage(e.target.parentNode);
+        window.removeEventListener('click', page.clickOutsideCardSaveEvent, true);
+        console.log("Nu borde den vara borta");
     },
     editColumnName: function (e) {
         if (page.editing == false) {
